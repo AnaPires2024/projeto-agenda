@@ -1,13 +1,13 @@
 <?php
-    include_once("templates/header.php");
+include_once("templates/header.php");
 ?>
 
 <div class="container" id="base-container">
     <?php include_once("templates/btn-voltar.html") ?>
     <h1 id="main-title">Contato</h1>
-
+    
     <label class="bold">Nome:</label>
-    <?= $contact["NAME"] ?><br/>
+    <?= $contact["NAME"] ?><br />
     <label class="bold">E-MAIL:</label>
     <?= $contact["EMAIL"] ?>
 
@@ -27,5 +27,5 @@
 </div>
 
 <?php
-    include_once("templates/footer.php");
+include_once("templates/footer.php");
 ?>

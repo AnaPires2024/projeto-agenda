@@ -1,10 +1,10 @@
 <?php
-include_once("templates/header.php");
+    include_once("templates/header.php");
 ?>
 <div class="container" id="base-container">
     <?php include_once("templates/btn-voltar.html") ?>
     <h1 id="main-title">Criando contato</h1>
-    <form id="create-form" action="<?= $BASE_URL ?>config/process.php" method="POST">
+    <form action="<?= $BASE_URL ?>config/process.php" method="POST">
         <input type="hidden" name="type" value="create">
         <div class="form-group">
             <label class="form-name" for="name">Nome do contato:</label>

@@ -1,5 +1,5 @@
 <?php
-include_once("templates/header.php");
+  include_once("templates/header.php");
 ?>
 
 <div class="container">
@@ -15,7 +15,7 @@ include_once("templates/header.php");
           <th scope="col">#</th>
           <th scope="col">Nome</th>
           <th scope="col">Email</th>
-          <th scope="col">#</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -46,5 +46,5 @@ include_once("templates/header.php");
 </div>
 
 <?php
-include_once("templates/footer.php");
+  include_once("templates/footer.php");
 ?>
