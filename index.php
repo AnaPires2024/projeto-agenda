@@ -19,17 +19,18 @@ if (isset($_SESSION['msg'])) {
     <title>Formulario de login</title>
 </head>
 
-<body class="d-flex align-items-center py-4 bg-info">
+<body id="bg-login" class="d-flex align-items-center py-4">
+
     <main class="w-100 m-auto form-container">
 
         <?php if (isset($printMsg) && $printMsg != ''): ?>
             <p id="msg" class="bg bg-warning"><?= $printMsg ?></p>
         <?php endif; ?></br>
 
-        <form action="<?= $BASE_URL ?>config/process.php" method="POST">
+        <form action="<?= $BASE_URL ?>config/process.php" method="post">
             <input type="hidden" name="type" value="login">
             <img src="./img/logo.svg" alt="Minha agenda" class="mb-4" height="57" width="72" />
-            <h1 class="h3 mb-3 fw-normal">Minha agenda</h1>
+            <h1 class="h3 mb-3 fw-normal">Agenda de Contatos</h1>
             <div class="form-floating">
                 <input type="email" class="form-control" name="email" id="floatingInput" placeholder="email" required />
                 <label for="floatingInput">E-mail</label>
@@ -38,7 +39,7 @@ if (isset($_SESSION['msg'])) {
                 <input type="password" class="form-control" name="senha" id="floatingInput" placeholder="senha" required />
                 <label for="floatingInput">Senha</label>
             </div>
-            <div class="text-start my-3 ">
+            <div class="text-start my-3 text-white">
                 <a href="./formLogin.php">
                     cadastra-se
                 </a>
@@ -47,6 +48,7 @@ if (isset($_SESSION['msg'])) {
 
         </form>
     </main>
+
 </body>
 
 </html>

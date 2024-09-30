@@ -16,10 +16,10 @@ if (isset($_SESSION['msg'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <title>Formulario de login</title>
+    <title>Formulario de Criar conta</title>
 </head>
 
-<body class="d-flex align-items-center py-4 bg-info">
+<body id="bg-login" class="d-flex align-items-center py-4 bg-info">
     <main class="w-100 m-auto form-container">
         <form action="<?= $BASE_URL ?>config/process.php" method="POST">
             <input type="hidden" name="type" value="criar_conta">

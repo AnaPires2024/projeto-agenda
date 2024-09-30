@@ -1,7 +1,7 @@
 <?php
-    include_once("templates/header.php");
+include_once("templates/header.php");
 ?>
-<div class="container" id="base-container">
+<div class="container" id="base-container" >
     <?php include_once("templates/btn-voltar.html") ?>
     <h1 id="main-title">Criando contato</h1>
     <form action="<?= $BASE_URL ?>config/process.php" method="POST">
@@ -34,5 +34,5 @@
     </form>
 </div>
 <?php
-    include_once("templates/footer.php");
+include_once("templates/footer.php");
 ?>

@@ -19,19 +19,18 @@ if (!empty($data)) {
         $numero = $data["numero"];
         $ddd = $data["ddd"];
 
-        //Iniciar a transação
-        $conn->beginTransaction();
-
+        $conn->beginTransaction();        
         $query = "INSERT INTO tb_contatos(name, email) VALUES (:name, :email)";
         $stmt = $conn->prepare($query);
-
+        
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":email", $email);
+    
         $stmt->execute();
 
         //Pegando o Id do ultimo dado inserido 
         $idContato = $conn->lastInsertId();
-
+       
         $query = "INSERT INTO tb_telefone(TIPO, NUMERO, DDD, CONTATO_ID) VALUES (:tipo, :numero, :ddd, :idcontato)";
         $stmt = $conn->prepare($query);
 
@@ -152,15 +151,24 @@ if (!empty($data)) {
         $email = $data["email"];
         $senha = $data["senha"];
 
+        $conn->beginTransaction();
         $query = "INSERT INTO tb_usuario(NAME, EMAIL, SENHA) VALUES (:name, :email, :senha)";
         $stmt = $conn->prepare($query);
 
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":senha", $senha);
-    
+        $stmt->execute();
+
+        $idLogin = $conn->lastInsertId();
+
+        $query = "INSERT INTO tb_agenda(USER_ID) VALUES (:id)";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":id", $idLogin);
+
         try {
             $stmt->execute();
+            $conn->commit();
             header("Location:" . $BASE_URL . "../index.php");
             $_SESSION["msg"] = "Conta criada com sucesso!";
 
